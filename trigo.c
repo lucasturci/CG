@@ -11,8 +11,8 @@ void draw_circle(int r, ALLEGRO_COLOR col) {
 
 	for(int x = -r; x <= r; ++x) {
 		int y = round(sqrt(((float)r) * r - ((float)x) * x));
-		al_draw_pixel(x + DISPLAY_WIDTH/2, y + DISPLAY_HEIGHT/2, white);	
-		al_draw_pixel(x + DISPLAY_WIDTH/2, -y + DISPLAY_HEIGHT/2, white);
+		al_draw_pixel(x + DISPLAY_WIDTH/2, y + DISPLAY_HEIGHT/2, col);	
+		al_draw_pixel(x + DISPLAY_WIDTH/2, -y + DISPLAY_HEIGHT/2, col);
 	}
 }
 
