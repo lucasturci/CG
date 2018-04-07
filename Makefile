@@ -11,4 +11,4 @@ trigo: $(OBJECTS)
 run:
 	@./$(f)	
 %.o: %.c
-	@gcc -o $@ -c $< -I./
+	@gcc -o $@ -c $< -I./include
