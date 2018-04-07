@@ -3,9 +3,9 @@ LINKS = -lallegro_main -lallegro_primitives -lallegro
 
 meio_ponto: meio_ponto.o
 	@gcc -o $@ $@.o $(LINKS)
-naive: naive.o
+esfericas: esfericas.o
 	@gcc -o $@ $@.o $(LINKS) -lm
-trigo: trigo.o
+tradicional: tradicional.o
 	@gcc -o $@ $@.o $(LINKS) -lm
 test_meio_ponto: test_meio_ponto.o
 	gcc -o $@ $@.o $(LINKS) -lm
