@@ -7,7 +7,8 @@
 #define DISPLAY_WIDTH 540
 #define DISPLAY_HEIGHT 540
 
-void draw_circle(int r, ALLEGRO_COLOR col) {
+ALLEGRO_COLOR white;
+void draw_circle(int r) {
 
 	for(int x = -r; x <= r; ++x) {
 		int y = round(sqrt(((float)r) * r - ((float)x) * x));
@@ -29,10 +30,19 @@ int main() {
 
 	display = al_create_display(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
-	ALLEGRO_COLOR white = al_map_rgb(255, 255, 255);
-	//al_draw_pixel(50, 50, white);
+	white = al_map_rgb(255, 255, 255);
+
+	for(int r = 25; r <= 250; r += 25) {
+		clock_t t = clock();
+		for(int i = 0; i < 100; ++i) {
+			draw_circle(r);
+		}
+
+		double tim = (clock() - t)/(1.0 * CLOCKS_PER_SEC);
+		printf("R = %d Tempo medio = %lf\n", r, tim/100); 
+		al_flip_display(); //atualiza o canvas
+	}
 	
-	draw_circle(r, white);
 	al_flip_display(); //atualiza o canvas
 
 	printf("Digite qualquer coisa para sair\n");
