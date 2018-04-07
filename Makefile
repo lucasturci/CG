@@ -1,22 +1,16 @@
 SRC = $(wildcard *.c)
 LINKS = -lallegro_main -lallegro_primitives -lallegro
 
-meio_ponto: meio_ponto.o
+ponto_medio: ponto_medio.o
 	@gcc -o $@ $@.o $(LINKS)
 esfericas: esfericas.o
 	@gcc -o $@ $@.o $(LINKS) -lm
 tradicional: tradicional.o
 	@gcc -o $@ $@.o $(LINKS) -lm
-test_meio_ponto: test_meio_ponto.o
-	gcc -o $@ $@.o $(LINKS) -lm
-test_trigo: test_trigo.o
-	gcc -o $@ $@.o $(LINKS) -lm
-test_naive: test_naive.o
-	gcc -o $@ $@.o $(LINKS) -lm
 run:
 	@./$(f)	
 %.o: %.c
-	gcc -o $@ -c $<
+	@gcc -o $@ -c $<
 
 clean:
-	rm *.o test_trigo test_naive test_meio_ponto naive meio_ponto
+	rm *.o tradicional esfericas ponto_medio

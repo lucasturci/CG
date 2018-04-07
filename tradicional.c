@@ -7,6 +7,7 @@
 #define DISPLAY_WIDTH 540
 #define DISPLAY_HEIGHT 540
 
+/* Desenha um circulo atraves do metodo tradicional - equacao da circunferencia */
 void draw_circle(int r, ALLEGRO_COLOR col) {
 
 	for(int x = -r; x <= r; ++x) {
@@ -17,6 +18,7 @@ void draw_circle(int r, ALLEGRO_COLOR col) {
 }
 
 int main() {
+	// Inicializacao das bibliotecas
 	al_init();
 	al_init_primitives_addon();
 
@@ -30,9 +32,9 @@ int main() {
 	display = al_create_display(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
 	ALLEGRO_COLOR white = al_map_rgb(255, 255, 255);
-	//al_draw_pixel(50, 50, white);
 	
-	draw_circle(r, white);
+	draw_circle(r, white); //Desenha o circulo
+
 	al_flip_display(); //atualiza o canvas
 
 	printf("Digite qualquer coisa para sair\n");
