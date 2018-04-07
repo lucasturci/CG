@@ -3,12 +3,12 @@ OBJECTS = $(SRC:.c=.o)
 LINKS = -lallegro_main -lallegro_primitives -lallegro
 
 meio_ponto: $(OBJECTS)
-	@gcc -o $@ meio_ponto.o $(LINKS) -L./lib -I./include
+	@gcc -o $@ meio_ponto.o $(LINKS)
 naive: $(OBJECTS)
-	@gcc -o $@ naive.o $(LINKS) -L./lib -I./include
+	@gcc -o $@ naive.o $(LINKS)
 trigo: $(OBJECTS)
-	@gcc -o $@ trigo.o $(LINKS) -L./lib -I./include
+	@gcc -o $@ trigo.o $(LINKS)
 run:
 	@./$(f)	
 %.o: %.c
-	@gcc -o $@ -c $< -I./include
+	@gcc -o $@ -c $<
